@@ -31,7 +31,7 @@ h1 {
 }
 
 .item1:hover {
-	color: white;
+	color: orange;
 	cursor: pointer;
 }
 
