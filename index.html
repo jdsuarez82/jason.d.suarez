@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Square</title>
+    <title>Moveable Box</title>
     <style>
-      .square {
-        width: 100x;
+      #box {
+        width: 100px;
         height: 100px;
-        background-color: blue;
-        position: bottom;
+        background-color: red;
+        position: absolute;
+        left: 0;
+        top: 0;
+        touch-action: none; /* disable browser's default touch gestures */
       }
     </style>
   </head>
   <body>
-    <div class="square"></div>
+    <div id="box"></div>
+
+    <script>
+      let startX = 0;
+      let startY = 0;
+      let boxLeft = 0;
+      let boxTop = 0;
+
+      const box = document.getElementById("box");
+
+      box.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].pageX;
+        startY = e.touches[0].pageY;
+        boxLeft = parseInt(window.getComputedStyle(box).left);
+        boxTop = parseInt(window.getComputedStyle(box).top);
+      });
+
+      box.addEventListener("touchmove", (e) => {
+        const touchX = e.touches[0].pageX;
+        const touchY = e.touches[0].pageY;
+        const deltaX = touchX - startX;
+        const deltaY = touchY - startY;
+        box.style.left = `${boxLeft + deltaX}px`;
+        box.style.top = `${boxTop + deltaY}px`;
+      });
+    </script>
   </body>
 </html>
