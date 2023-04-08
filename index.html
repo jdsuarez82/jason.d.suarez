@@ -1,45 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Moveable Box</title>
+    <title>Bird Flying Across the Screen</title>
     <style>
-      #box {
-        width: 400px;
-        height: 400px;
-        background-color: pink;
+      #bird {
         position: absolute;
-        left: 0;
-        top: 0;
-        touch-action: none; /* disable browser's default touch gestures */
+        top: 50%;
+        left: -100px;
+        width: 100px;
+        height: 80px;
+        background-image: url('https://image.flaticon.com/icons/png/512/34/34568.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        animation: fly 10s linear infinite;
+      }
+
+      @keyframes fly {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
       }
     </style>
   </head>
   <body>
-    <div id="box"></div>
-
-    <script>
-      let startX = 0;
-      let startY = 0;
-      let boxLeft = 0;
-      let boxTop = 0;
-
-      const box = document.getElementById("box");
-
-      box.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].pageX;
-        startY = e.touches[0].pageY;
-        boxLeft = parseInt(window.getComputedStyle(box).left);
-        boxTop = parseInt(window.getComputedStyle(box).top);
-      });
-
-      box.addEventListener("touchmove", (e) => {
-        const touchX = e.touches[0].pageX;
-        const touchY = e.touches[0].pageY;
-        const deltaX = touchX - startX;
-        const deltaY = touchY - startY;
-        box.style.left = `${boxLeft + deltaX}px`;
-        box.style.top = `${boxTop + deltaY}px`;
-      });
-    </script>
+    <div id="bird"></div>
   </body>
 </html>
