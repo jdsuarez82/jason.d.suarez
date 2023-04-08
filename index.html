@@ -1,67 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Analog Clock</title>
+    <title>Digital Clock</title>
     <style>
       #clock {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        background-color: #fff;
-        border: 10px solid #000;
-        position: relative;
+        font-size: 48px;
+        text-align: center;
         margin: 50px auto;
-      }
-
-      .hand {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform-origin: bottom;
-        border-radius: 10px;
-      }
-
-      .hour {
-        width: 6px;
-        height: 50px;
-        background-color: #000;
-        transform: translateX(-3px);
-      }
-
-      .minute {
-        width: 4px;
-        height: 80px;
-        background-color: #000;
-        transform: translateX(-2px);
-      }
-
-      .second {
-        width: 2px;
-        height: 100px;
-        background-color: #f00;
       }
     </style>
   </head>
   <body onload="setInterval('updateClock()', 1000)">
-    <div id="clock">
-      <div class="hand hour"></div>
-      <div class="hand minute"></div>
-      <div class="hand second"></div>
-    </div>
+    <div id="clock"></div>
     <script>
       function updateClock() {
         const now = new Date();
-        const hours = now.getHours() % 12;
+        const hours = now.getHours();
         const minutes = now.getMinutes();
         const seconds = now.getSeconds();
 
-        const hourDeg = hours * 30 + (minutes / 60) * 30;
-        const minuteDeg = minutes * 6 + (seconds / 60) * 6;
-        const secondDeg = seconds * 6;
+        const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
-        document.querySelector('.hour').style.transform = `rotate(${hourDeg}deg)`;
-        document.querySelector('.minute').style.transform = `rotate(${minuteDeg}deg)`;
-        document.querySelector('.second').style.transform = `rotate(${secondDeg}deg)`;
+        document.querySelector('#clock').textContent = timeString;
       }
     </script>
   </body>
