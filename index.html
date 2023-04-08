@@ -1,27 +1,68 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Audra</title>
+    <title>Analog Clock</title>
     <style>
-      #audra {
-        font-size: 100px;
-        font-family: 'Montserrat', sans-serif;
-        color: #ff69b4;
-        text-shadow: 2px 2px #f0e68c, 4px 4px #ff69b4;
-        animation: spin 5s linear infinite;
+      #clock {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 10px solid #000;
+        position: relative;
+        margin: 50px auto;
       }
 
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
+      .hand {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: bottom;
+        border-radius: 10px;
+      }
+
+      .hour {
+        width: 6px;
+        height: 50px;
+        background-color: #000;
+        transform: translateX(-3px);
+      }
+
+      .minute {
+        width: 4px;
+        height: 80px;
+        background-color: #000;
+        transform: translateX(-2px);
+      }
+
+      .second {
+        width: 2px;
+        height: 100px;
+        background-color: #f00;
       }
     </style>
   </head>
-  <body>
-    <div id="audra">Audra Suarez</div>
+  <body onload="setInterval('updateClock()', 1000)">
+    <div id="clock">
+      <div class="hand hour"></div>
+      <div class="hand minute"></div>
+      <div class="hand second"></div>
+    </div>
+    <script>
+      function updateClock() {
+        const now = new Date();
+        const hours = now.getHours() % 12;
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        const hourDeg = hours * 30 + (minutes / 60) * 30;
+        const minuteDeg = minutes * 6 + (seconds / 60) * 6;
+        const secondDeg = seconds * 6;
+
+        document.querySelector('.hour').style.transform = `rotate(${hourDeg}deg)`;
+        document.querySelector('.minute').style.transform = `rotate(${minuteDeg}deg)`;
+        document.querySelector('.second').style.transform = `rotate(${secondDeg}deg)`;
+      }
+    </script>
   </body>
 </html>
