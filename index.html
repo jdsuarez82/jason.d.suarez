@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bird Flying Across the Screen</title>
+    <title>Audra</title>
     <style>
-      #bird {
-        position: absolute;
-        top: 50%;
-        left: -100px;
-        width: 100px;
-        height: 80px;
-        background-image: url('https://image.flaticon.com/icons/png/512/34/34568.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        animation: fly 10s linear infinite;
+      #audra {
+        font-size: 100px;
+        font-family: 'Montserrat', sans-serif;
+        color: #ff69b4;
+        text-shadow: 2px 2px #f0e68c, 4px 4px #ff69b4;
+        animation: spin 5s linear infinite;
       }
 
-      @keyframes fly {
+      @keyframes spin {
         0% {
-          transform: translateX(-100%);
+          transform: rotate(0deg);
         }
         100% {
-          transform: translateX(100%);
+          transform: rotate(360deg);
         }
       }
     </style>
   </head>
   <body>
-    <div id="bird"></div>
+    <div id="audra">Audra</div>
   </body>
 </html>
