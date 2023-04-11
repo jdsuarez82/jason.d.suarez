@@ -3,34 +3,39 @@
 <head>
     <title>Color Changing Background</title>
     <style>
+        /* Set the body to cover the entire viewport */
         body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
             height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000;
-            transition: background-color 0.5s;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
-    <h1><marquee>My name is Jason!</marquee></h1>
     <script>
-        // Array of colors to be used for background
-        const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
-          // Function to generate a random color from the array
-    function getRandomColor() {
-        return colors[Math.floor(Math.random() * colors.length)];
-    }
+        // Function to generate a random color
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
 
-    // Function to change the background color
-    function changeBackgroundColor() {
-        const newColor = getRandomColor();
-        document.body.style.backgroundColor = newColor;
-    }
+        // Function to change the background color
+        function changeBackgroundColor() {
+            var color = getRandomColor();
+            document.body.style.backgroundColor = color;
+        }
 
-    // Add event listener for click event
-    document.addEventListener('click', changeBackgroundColor);
-</script>
+        // Call the function initially to set the initial background color
+        changeBackgroundColor();
+
+        // Set an interval to change the background color every 2 seconds
+        setInterval(changeBackgroundColor, 2000);
+    </script>
 </body>
 </html>
