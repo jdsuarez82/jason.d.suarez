@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Digital Clock</title>
+<head>
+    <title>Weather in Dallas, Texas</title>
     <style>
-      #clock {
-        font-size: 48px;
-        text-align: center;
-        margin: 50px auto;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        p {
+            font-size: 24px;
+        }
     </style>
-  </head>
-  <body onload="setInterval('updateClock()', 1000)">
-    <div id="clock"></div>
+</head>
+<body>
+    <h1>Weather in Dallas, Texas</h1>
+    <p id="weather"></p>
     <script>
-      function updateClock() {
-        const now = new Date();
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-        const seconds = now.getSeconds();
+        // Replace the API_KEY with your own OpenWeatherMap API key
+        const API_KEY = 'YOUR_API_KEY';
+        const CITY_NAME = 'Dallas';
+        const STATE_CODE = 'TX';
+        const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME},${STATE_CODE}&appid=${API_KEY}&units=imperial`;
 
-        const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        async function getWeather() {
+            try {
+                const response = await fetch(WEATHER_API_URL);
+                const data = await response.json();
+                const weather = data.weather[0].description;
+                const temperature = data.main.temp;
+                const humidity = data.main.humidity;
+                const windSpeed = data.wind.speed;
+                document.getElementById('weather').innerHTML = `Weather: ${weather}<br>Temperature: ${temperature} &#8457;<br>Humidity: ${humidity}%<br>Wind Speed: ${windSpeed} mph`;
+            } catch (error) {
+                console.error(error);
+                document.getElementById('weather').innerHTML = 'Failed to fetch weather data';
+            }
+        }
 
-        document.querySelector('#clock').textContent = timeString;
-      }
+        getWeather();
     </script>
-  </body>
+</body>
 </html>
