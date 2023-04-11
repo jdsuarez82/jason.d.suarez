@@ -1,66 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Daisy: A Poem</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 30px;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    p {
-      text-align: center;
-      margin-top: 20px;
-    }
-  </style>
+    <title>Color Changing Background</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            transition: background-color 0.5s;
+        }
+    </style>
 </head>
 <body>
-  <h1>Daisy: A Poem</h1>
-  <p>
-    Daisy from afar, a foreign land,<br>
-    A Korean lass with dreams so grand,<br>
-    Her journey took her across the sea,<br>
-    To study in a land unknown, but free.
-  </p>
-  <p>
-    With a heart full of courage and grace,<br>
-    She ventured into a new place,<br>
-    Leaving behind her home and kin,<br>
-    Embracing the unknown with a determined grin.
-  </p>
-  <p>
-    In a foreign land, she found her way,<br>
-    Navigating through each new day,<br>
-    Learning language, culture, and more,<br>
-    Her spirit shining, her heart pure.
-  </p>
-  <p>
-    She made new friends, shared laughter and tears,<br>
-    Her presence brightened, dispelling any fears,<br>
-    Her smiles contagious, her kindness pure,<br>
-    Daisy, a gem, for all to adore.
-  </p>
-  <p>
-    With time, she grew, blossoming like a flower,<br>
-    Gaining wisdom and strength with each passing hour,<br>
-    Leaving indelible memories, a cherished part,<br>
-    Daisy, a soul that touched many a heart.
-  </p>
-  <p>
-    As her journey continued, the time flew by,<br>
-    A Korean exchange student with wings to fly,<br>
-    Leaving with memories, cherished and sweet,<br>
-    A tale of courage, a journey complete.
-  </p>
-  <p>
-    Daisy, a name that will never fade,<br>
-    A story of courage, a beautiful serenade,<br>
-    A shining example of strength and grace,<br>
-    A Korean exchange student who left her trace.
-  </p>
+    <script>
+        // Array of colors to be used for background
+        const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+          // Function to generate a random color from the array
+    function getRandomColor() {
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    // Function to change the background color
+    function changeBackgroundColor() {
+        const newColor = getRandomColor();
+        document.body.style.backgroundColor = newColor;
+    }
+
+    // Add event listener for click event
+    document.addEventListener('click', changeBackgroundColor);
+</script>
 </body>
 </html>
