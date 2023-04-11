@@ -1,41 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Color Changing Background</title>
+    <title>Paisley's Food Time</title>
     <style>
-        /* Set the body to cover the entire viewport */
+        /* Set the body to cover the entire viewport and center the text */
         body {
             margin: 0;
             padding: 0;
             width: 100vw;
             height: 100vh;
-            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://i.imgur.com/4opu4gV.jpg'); /* Set the background image */
+            background-size: cover; /* Scale the background image to cover the entire body */
+            font-family: 'Helvetica', sans-serif;
+            color: white; /* Set the text color */
+            text-align: center; /* Center the text */
+        }
+
+        /* Style for the text */
+        h1 {
+            font-size: 48px;
+            margin: 0;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black background */
         }
     </style>
 </head>
 <body>
-    <script>
-        // Function to generate a random color
-        function getRandomColor() {
-            var letters = '0123456789ABCDEF';
-            var color = '#';
-            for (var i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-
-        // Function to change the background color
-        function changeBackgroundColor() {
-            var color = getRandomColor();
-            document.body.style.backgroundColor = color;
-        }
-
-        // Call the function initially to set the initial background color
-        changeBackgroundColor();
-
-        // Set an interval to change the background color every 2 seconds
-        setInterval(changeBackgroundColor, 2000);
-    </script>
+    <h1>Paisley is eating her food!</h1>
 </body>
 </html>
