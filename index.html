@@ -1,56 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Color Changer</title>
+  <title>Menu Bar</title>
   <style>
-    body {
-      background-color: #ffffff; /* set initial background color */
+    /* Reset default styles */
+    body, ul {
+      margin: 0;
+      padding: 0;
     }
 
-    .button-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 50px;
+    /* Style for the menu bar */
+    .menu-bar {
+      background-color: #333;
     }
 
-    .color-button {
-      margin: 0 10px;
-      padding: 10px 20px;
-      font-size: 18px;
+    /* Style for the menu items */
+    .menu-item {
+      display: inline-block;
+      padding: 15px 20px;
+      color: #fff;
       cursor: pointer;
     }
 
-    .color-button:hover {
-      opacity: 0.8;
+    /* Style for the dropdown menus */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Style for the dropdown content */
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: none;
+      background-color: #f9f9f9;
+      padding: 10px;
+      min-width: 150px;
+    }
+
+    /* Show dropdown content on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
   </style>
 </head>
 <body>
-  <h1>Color Changer</h1>
-  <div class="button-container">
-    <button class="color-button" id="redButton">Red</button>
-    <button class="color-button" id="greenButton">Green</button>
-    <button class="color-button" id="blueButton">Blue</button>
+  <h1>Menu Bar</h1>
+  <div class="menu-bar">
+    <ul>
+      <li class="menu-item">Home</li>
+      <li class="menu-item dropdown">
+        <span>Options</span>
+        <div class="dropdown-content">
+          <a href="#">Option 1</a>
+          <a href="#">Option 2</a>
+          <a href="#">Option 3</a>
+        </div>
+      </li>
+      <li class="menu-item">About</li>
+      <li class="menu-item">Contact</li>
+      <li class="menu-item">Blog</li>
+      <li class="menu-item">Gallery</li>
+      <li class="menu-item">Help</li>
+    </ul>
   </div>
-
-  <script>
-    // Get the buttons by their ids
-    var redButton = document.getElementById('redButton');
-    var greenButton = document.getElementById('greenButton');
-    var blueButton = document.getElementById('blueButton');
-
-    // Add event listeners to the buttons
-    redButton.addEventListener('click', function() {
-      document.body.style.backgroundColor = '#ff0000'; // set background color to red
-    });
-
-    greenButton.addEventListener('click', function() {
-      document.body.style.backgroundColor = '#00ff00'; // set background color to green
-    });
-
-    blueButton.addEventListener('click', function() {
-      document.body.style.backgroundColor = '#0000ff'; // set background color to blue
-    });
-  </script>
 </body>
 </html>
