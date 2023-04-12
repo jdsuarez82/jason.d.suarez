@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Paisley's Food Time</title>
-    <style>
-        /* Set the body to cover the entire viewport and center the text */
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: url('https://i.imgur.com/MXpQoTb.jpg'); /* Set the background image */
-            background-size: cover; /* Scale the background image to cover the entire body */
-            font-family: 'Helvetica', sans-serif;
-            color: white; /* Set the text color */
-            text-align: center; /* Center the text */
-        }
+  <title>Color Changer</title>
+  <style>
+    body {
+      background-color: #ffffff; /* set initial background color */
+    }
 
-        /* Style for the text */
-        h1 {
-            font-size: 48px;
-            margin: 0;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black background */
-        }
-    </style>
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .color-button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .color-button:hover {
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
-    <h1>Paisley is eating her food!</h1>
+  <h1>Color Changer</h1>
+  <div class="button-container">
+    <button class="color-button" id="redButton">Red</button>
+    <button class="color-button" id="greenButton">Green</button>
+    <button class="color-button" id="blueButton">Blue</button>
+  </div>
+
+  <script>
+    // Get the buttons by their ids
+    var redButton = document.getElementById('redButton');
+    var greenButton = document.getElementById('greenButton');
+    var blueButton = document.getElementById('blueButton');
+
+    // Add event listeners to the buttons
+    redButton.addEventListener('click', function() {
+      document.body.style.backgroundColor = '#ff0000'; // set background color to red
+    });
+
+    greenButton.addEventListener('click', function() {
+      document.body.style.backgroundColor = '#00ff00'; // set background color to green
+    });
+
+    blueButton.addEventListener('click', function() {
+      document.body.style.backgroundColor = '#0000ff'; // set background color to blue
+    });
+  </script>
 </body>
 </html>
