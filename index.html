@@ -1,69 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Menu Bar</title>
-  <style>
-    /* Reset default styles */
-    body, ul {
-      margin: 0;
-      padding: 0;
-    }
+    <title>Gradient Background</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(to right, #ff6e7f, #bfe9ff);
+            transition: background 0.5s ease-in-out;
+        }
 
-    /* Style for the menu bar */
-    .menu-bar {
-      background-color: #333;
-    }
-
-    /* Style for the menu items */
-    .menu-item {
-      display: inline-block;
-      padding: 15px 20px;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    /* Style for the dropdown menus */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    /* Style for the dropdown content */
-    .dropdown-content {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      display: none;
-      background-color: #f9f9f9;
-      padding: 10px;
-      min-width: 150px;
-    }
-
-    /* Show dropdown content on hover */
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-  </style>
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
-  <h1>Menu Bar</h1>
-  <div class="menu-bar">
-    <ul>
-      <li class="menu-item">Home</li>
-      <li class="menu-item dropdown">
-        <span>Options</span>
-        <div class="dropdown-content">
-          <a href="#">Option 1</a>
-          <a href="#">Option 2</a>
-          <a href="#">Option 3</a>
-        </div>
-      </li>
-      <li class="menu-item">About</li>
-      <li class="menu-item">Contact</li>
-      <li class="menu-item">Blog</li>
-      <li class="menu-item">Gallery</li>
-      <li class="menu-item">Help</li>
-    </ul>
-  </div>
+    <h1>Behold!  A gradient that changes when you clickity click!</h1>
+    <div class="overlay"></div>
+    <script>
+        // Function to generate a random color gradient
+        function generateRandomGradient() {
+            const color1 = getRandomColor();
+            const color2 = getRandomColor();
+            const gradient = `linear-gradient(to right, ${color1}, ${color2})`;
+            document.body.style.background = gradient;
+        }
+
+        // Function to generate a random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Add event listener for click event on the body
+        document.body.addEventListener('click', generateRandomGradient);
+    </script>
 </body>
 </html>
