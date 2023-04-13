@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Brooke Suarez Likes Tacos and Luke Bryan</title>
+    <title>Brooke Suarez Likes Tacos and Luke Bryan!</title>
     <style>
         body {
-            background: linear-gradient(to right, #00C9FF, #92FE9D);
-            /* Use your desired gradient colors and directions */
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
-        .marquee {
-            white-space: nowrap;
-            overflow: hidden;
-            color: #FFF;
-            /* Use your desired text color */
+        .flashing-text {
             font-size: 48px;
             /* Use your desired font size */
             padding: 20px;
             /* Add padding as needed */
-        }
-
-        .marquee span {
-            animation: marquee 10s linear infinite;
+            animation: flashing 1s infinite;
             /* Change the animation duration as desired */
         }
 
-        @keyframes marquee {
+        @keyframes flashing {
             0% {
-                transform: translateX(100%);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
             }
             100% {
-                transform: translateX(-100%);
+                opacity: 1;
             }
         }
     </style>
+    <script>
+        function startFlashing() {
+            var flashingText = document.getElementById("flashing-text");
+            flashingText.style.animation = "flashing 1s infinite";
+            /* Change the animation duration as desired */
+        }
+    </script>
 </head>
 <body>
-    <div class="marquee">
-        <span>Brooke Suarez likes tacos and Luke Bryan</span>
-        <!-- Replace this text with your desired marquee text -->
+    <button onclick="startFlashing()">Click me!</button>
+    <!-- Replace this text with your desired button text -->
+    <div id="flashing-text" class="flashing-text">
+        Brooke Suarez likes tacos and Luke Bryan!
     </div>
 </body>
 </html>
