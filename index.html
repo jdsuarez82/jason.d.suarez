@@ -1,53 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gradient Background</title>
+    <title>Daisy: A Poem About a Korean Exchange Student</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            overflow: hidden;
-            background: linear-gradient(to right, #ff6e7f, #bfe9ff);
-            transition: background 0.5s ease-in-out;
+            font-family: Arial, sans-serif;
+            margin: 50px;
         }
+    h1 {
+        text-align: center;
+    }
 
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-        }
-    </style>
+    p {
+        text-align: justify;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    .signature {
+        text-align: right;
+        margin-top: 30px;
+    }
+</style>
 </head>
 <body>
-    <div class="overlay"></div>
-    <h1>Scan my Venmo QR Code</h1>
-    <img src="path/to/venmo_qr_code.png" alt="Venmo QR Code">
-    <p>Scan the QR code above with your Venmo app to send me a payment.</p>
-    <script>
-        // Function to generate a random color gradient
-        function generateRandomGradient() {
-            const color1 = getRandomColor();
-            const color2 = getRandomColor();
-            const gradient = `linear-gradient(to right, ${color1}, ${color2})`;
-            document.body.style.background = gradient;
-        }
+    <h1>Daisy: A Poem About a Korean Exchange Student</h1>
+    <p>
+        Daisy came from Seoul, so far away,
+        With a smile that brightened each and every day.
+        A Korean exchange student, full of grace,
+        She brought a new perspective to our place.
+    </p>
+<p>
+    She arrived with curiosity and wonder,
+    Eager to learn and make friends like thunder.
+    Her broken English, though a little shy,
+    Couldn't hide her spirit that reached so high.
+</p>
 
-        // Function to generate a random color
-        function getRandomColor() {
-            const letters = '0123456789ABCDEF';
-            let color = '#';
-            for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
+<p>
+    She marveled at the sights and sounds anew,
+    The language, the food, the customs too.
+    She shared her culture, her stories and more,
+    Enriching our lives, down to the core.
+</p>
 
-        // Add event listener for click event on the body
-        document.body.addEventListener('click', generateRandomGradient);
-    </script>
+<p>
+    Daisy was a gem, a diamond in the rough,
+    With a heart so pure, and gentle as a puff.
+    She faced challenges with courage and might,
+    Overcoming obstacles, shining so bright.
+</p>
+
+<p>
+    She taught us about resilience and grace,
+    About embracing differences and finding our place.
+    Her laughter was infectious, her presence so sweet,
+    With Daisy around, life was truly a treat.
+</p>
+
+<p class="signature">By: [Your Name]</p>
+
 </body>
 </html>
+
