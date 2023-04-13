@@ -1,67 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Daisy: A Poem About a Korean Exchange Student</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 50px;
-        }
-    h1 {
-        text-align: center;
+  <title>Random Background Color Generator</title>
+  <style>
+    body {
+      transition: background-color 0.5s ease;
     }
-
-    p {
-        text-align: justify;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        line-height: 1.5;
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-
-    .signature {
-        text-align: right;
-        margin-top: 30px;
+    .color-btn {
+      padding: 16px;
+      font-size: 24px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
     }
-</style>
+  </style>
 </head>
 <body>
-    <h1>Daisy: A Poem About a Korean Exchange Student</h1>
-    <p>
-        Daisy came from Seoul, so far away,
-        With a smile that brightened each and every day.
-        A Korean exchange student, full of grace,
-        She brought a new perspective to our place.
-    </p>
-<p>
-    She arrived with curiosity and wonder,
-    Eager to learn and make friends like thunder.
-    Her broken English, though a little shy,
-    Couldn't hide her spirit that reached so high.
-</p>
+  <div class="container">
+    <button class="color-btn">Generate Color</button>
+  </div>
 
-<p>
-    She marveled at the sights and sounds anew,
-    The language, the food, the customs too.
-    She shared her culture, her stories and more,
-    Enriching our lives, down to the core.
-</p>
+  <script>
+    const colorBtn = document.querySelector('.color-btn');
+    const body = document.body;
 
-<p>
-    Daisy was a gem, a diamond in the rough,
-    With a heart so pure, and gentle as a puff.
-    She faced challenges with courage and might,
-    Overcoming obstacles, shining so bright.
-</p>
+    const generateRandomColor = () => {
+      const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+      return randomColor;
+    };
 
-<p>
-    She taught us about resilience and grace,
-    About embracing differences and finding our place.
-    Her laughter was infectious, her presence so sweet,
-    With Daisy around, life was truly a treat.
-</p>
-
-<p class="signature">By: [Your Name]</p>
-
+    colorBtn.addEventListener('click', () => {
+      const randomColor = generateRandomColor();
+      body.style.backgroundColor = randomColor;
+    });
+  </script>
 </body>
 </html>
-
