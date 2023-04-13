@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Random Background Color Generator</title>
-  <style>
-    body {
-      transition: background-color 0.5s ease;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .color-btn {
-      padding: 16px;
-      font-size: 24px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
+    <title>Brooke Suarez Likes Tacos and Luke Bryan</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #00C9FF, #92FE9D);
+            /* Use your desired gradient colors and directions */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            color: #FFF;
+            /* Use your desired text color */
+            font-size: 48px;
+            /* Use your desired font size */
+            padding: 20px;
+            /* Add padding as needed */
+        }
+
+        .marquee span {
+            animation: marquee 10s linear infinite;
+            /* Change the animation duration as desired */
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <button class="color-btn">Generate Color</button>
-  </div>
-
-  <script>
-    const colorBtn = document.querySelector('.color-btn');
-    const body = document.body;
-
-    const generateRandomColor = () => {
-      const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-      return randomColor;
-    };
-
-    colorBtn.addEventListener('click', () => {
-      const randomColor = generateRandomColor();
-      body.style.backgroundColor = randomColor;
-    });
-  </script>
+    <div class="marquee">
+        <span>Brooke Suarez likes tacos and Luke Bryan</span>
+        <!-- Replace this text with your desired marquee text -->
+    </div>
 </body>
 </html>
