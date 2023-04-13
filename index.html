@@ -1,58 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Changing Background Gradient</title>
+    <title>Spinning Image</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            overflow: hidden;
-            /* Hide horizontal and vertical scrollbars */
         }
 
-        .gradient-background {
+        .spinner-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            /* Adjust size and position as needed */
+        }
+
+        .spinner {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: -1;
-            /* Position the gradient background behind the content */
-        }
-    </style>
-    <script>
-        function changeGradient() {
-            var gradient = document.getElementById("gradient");
-            /* Change the ID to match the ID of your gradient element */
-            gradient.style.background = getRandomGradient();
-            /* Call the function to get a random gradient */
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            /* Adjust size as needed */
+            animation: spin 2s linear infinite;
+            /* Adjust animation duration and timing function as needed */
         }
 
-        function getRandomGradient() {
-            var colors = [
-                "#00C9FF, #92FE9D",
-                "#FDC830, #F37335",
-                "#ED213A, #93291E",
-                "#7F00FF, #E100FF",
-                "#00F260, #0575E6",
-                "#8E2DE2, #4A00E0",
-                "#F857A6, #FF5858"
-            ];
-            /* Define an array of gradient colors */
-            var randomIndex = Math.floor(Math.random() * colors.length);
-            /* Generate a random index from the array */
-            return "linear-gradient(to right, " + colors[randomIndex] + ")";
-            /* Return the randomly selected gradient */
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
-    </script>
+    </style>
 </head>
 <body>
-    <div class="gradient-background" id="gradient"></div>
-    <!-- Replace this element with your content -->
-    <script>
-        setInterval(changeGradient, 3000);
-        /* Change the gradient every 3 seconds (3000 milliseconds) */
-    </script>
+    <div class="spinner-container">
+        <img src="your-image-url.jpg" class="spinner" alt="Spinning Image">
+        <!-- Replace "your-image-url.jpg" with the URL or path of your image -->
+    </div>
 </body>
 </html>
