@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Spinning Image</title>
+    <title>Rainbow Color Buttons</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            transition: background-color 0.5s ease-in-out;
         }
-
-        .spinner-container {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 100px auto;
-            /* Adjust size and position as needed */
-        }
-
-        .spinner {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-            width: 100px;
-            height: 100px;
-            /* Adjust size as needed */
-            animation: spin 2s linear infinite;
-            /* Adjust animation duration and timing function as needed */
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
+        .color-button {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="spinner-container">
-        <img src="IMG_2538.jpg" class="spinner" alt="Spinning Image">
-        <!-- Replace "IMG_2538.jpg" with the URL or path of your image -->
+    <h1>Rainbow Color Buttons</h1>
+    <div id="color-container">
+        <button class="color-button" id="red-button"></button>
+        <button class="color-button" id="orange-button"></button>
+        <button class="color-button" id="yellow-button"></button>
+        <button class="color-button" id="green-button"></button>
+        <button class="color-button" id="blue-button"></button>
+        <button class="color-button" id="indigo-button"></button>
+        <button class="color-button" id="violet-button"></button>
     </div>
+
+    <script>
+        // Add event listeners to each button
+        document.getElementById("red-button").addEventListener("click", function() {
+            document.body.style.backgroundColor = "red";
+        });
+        document.getElementById("orange-button").addEventListener("click", function() {
+            document.body.style.backgroundColor = "orange";
+        });
+        document.getElementById("yellow-button").addEventListener("click", function() {
+            document.body.style.backgroundColor = "yellow";
+        });
+        document.getElementById("green-button").addEventListener("click", function() {
+            document.body.style.backgroundColor = "green";
+        });
+        document.getElementById("blue-button").addEventListener("click", function() {
+            document.body.style.backgroundColor = "blue";
+        });
+        document.getElementById("indigo-button").addEventListener("click", function() {
+            document.body.style.backgroundColor = "indigo";
+        });
+        document.getElementById("violet-button").addEventListener("click", function() {
+            document.body.style.backgroundColor = "violet";
+        });
+    </script>
 </body>
 </html>
