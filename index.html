@@ -1,57 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Rainbow Color Buttons</title>
+    <title>Color Changer</title>
     <style>
         body {
-            transition: background-color 0.5s ease-in-out;
+            background-color: blue; /* Set initial background color to blue */
+            transition: background-color 0.5s ease; /* Add transition for smooth color change */
         }
-        .color-button {
-            color: gray;
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            margin: 5px;
+
+        .button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
             border: none;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <h1>Rainbow Color Buttons</h1>
-    <div id="color-container">
-        <button class="color-button" id="red-button"></button>
-        <button class="color-button" id="orange-button"></button>
-        <button class="color-button" id="yellow-button"></button>
-        <button class="color-button" id="green-button"></button>
-        <button class="color-button" id="blue-button"></button>
-        <button class="color-button" id="indigo-button"></button>
-        <button class="color-button" id="violet-button"></button>
-    </div>
+    <button class="button" onclick="changeColor()">Change Color</button>
 
     <script>
-        // Add event listeners to each button
-        document.getElementById("red-button").addEventListener("click", function() {
-            document.body.style.backgroundColor = "red";
-        });
-        document.getElementById("orange-button").addEventListener("click", function() {
-            document.body.style.backgroundColor = "orange";
-        });
-        document.getElementById("yellow-button").addEventListener("click", function() {
-            document.body.style.backgroundColor = "yellow";
-        });
-        document.getElementById("green-button").addEventListener("click", function() {
-            document.body.style.backgroundColor = "green";
-        });
-        document.getElementById("blue-button").addEventListener("click", function() {
-            document.body.style.backgroundColor = "blue";
-        });
-        document.getElementById("indigo-button").addEventListener("click", function() {
-            document.body.style.backgroundColor = "indigo";
-        });
-        document.getElementById("violet-button").addEventListener("click", function() {
-            document.body.style.backgroundColor = "violet";
-        });
+        function changeColor() {
+            var body = document.body;
+            if (body.style.backgroundColor === 'blue') {
+                body.style.backgroundColor = 'red';
+            } else {
+                body.style.backgroundColor = 'blue';
+            }
+        }
     </script>
 </body>
 </html>
