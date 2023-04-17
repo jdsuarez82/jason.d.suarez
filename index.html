@@ -1,34 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Color Changer</title>
-    <style>
-        body {
-            background-color: blue; /* Set initial background color to blue */
-            transition: background-color 0.5s ease; /* Add transition for smooth color change */
-        }
-
-        .button {
-            padding: 50px 100px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+  <title>Planets Scale Comparison</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .planet {
+      border-radius: 50%;
+      position: absolute;
+    }
+    #sun {
+      background-color: yellow;
+      width: 120px;
+      height: 120px;
+    }
+    .planet-size {
+      font-size: 14px;
+      font-weight: bold;
+      position: relative;
+      top: -80px;
+    }
+  </style>
 </head>
 <body>
-    <button class="button" onclick="changeColor()">Change Color</button>
+  <h1>Planets Scale Comparison</h1>
+  <div class="container">
+    <div id="sun" class="planet"></div>
+    <div id="mercury" class="planet"></div>
+    <div id="venus" class="planet"></div>
+    <div id="earth" class="planet"></div>
+    <div id="mars" class="planet"></div>
+    <div id="jupiter" class="planet"></div>
+    <div id="saturn" class="planet"></div>
+    <div id="uranus" class="planet"></div>
+    <div id="neptune" class="planet"></div>
+  </div>
+  <script>
+    // Planet sizes in comparison to the Sun
+    var planetSizes = {
+      mercury: 0.383,
+      venus: 0.949,
+      earth: 1,
+      mars: 0.532,
+      jupiter: 11.209,
+      saturn: 9.449,
+      uranus: 4.007,
+      neptune: 3.883
+    };
 
-    <script>
-        function changeColor() {
-            var body = document.body;
-            if (body.style.backgroundColor === 'blue') {
-                body.style.backgroundColor = 'red';
-            } else {
-                body.style.backgroundColor = 'blue';
-            }
-        }
-    </script>
+    // Function to set planet sizes
+    function setPlanetSizes() {
+      var sunSize = document.getElementById('sun').offsetWidth;
+      for (var planet in planetSizes) {
+        var planetElement = document.getElementById(planet);
+        var planetSize = sunSize * planetSizes[planet];
+        planetElement.style.width = planetSize + 'px';
+        planetElement.style.height = planetSize + 'px';
+        planetElement.style.backgroundColor = planet === 'earth' ? 'blue' : 'gray';
+      }
+    }
+
+    // Call setPlanetSizes() when the page loads
+    window.addEventListener('load', setPlanetSizes);
+  </script>
 </body>
 </html>
