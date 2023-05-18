@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Background color change on scroll</title>
-	<style>
-		body {
-			height: 2000px; /* Set height to allow scrolling */
-			background-color: lightblue;
-		}
-		
-		h1 {
-			color: black;
-		}
-		
-		h3 {
-			color: black;
-		}
-	</style>
+  <title>Grocery Budget Calculator</title>
+  <script>
+    function calculateBudget() {
+      var salary = parseFloat(document.getElementById("salary").value);
+      var percentage = 0.1; // Assuming 10% of the salary for groceries
+
+      var budget = salary * percentage;
+      document.getElementById("result").innerHTML = "You can spend $" + budget.toFixed(2) + " on groceries.";
+    }
+  </script>
 </head>
 <body>
-	<h1>I can do all things through Christ who strengthens me.</h1>
-	<h3>Philippians 4:13</h3>
+  <h1>Grocery Budget Calculator</h1>
+  
+  <label for="salary">Enter your annual salary:</label>
+  <input type="number" id="salary" name="salary" min="0" step="1000" required>
+  <br><br>
+  
+  <button onclick="calculateBudget()">Calculate</button>
+  
+  <h2 id="result"></h2>
 </body>
 </html>
