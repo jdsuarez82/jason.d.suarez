@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Grocery Budget Calculator</title>
-  <script>
-    function calculateBudget() {
-      var salary = parseFloat(document.getElementById("salary").value);
-      var percentage = 0.1; // Assuming 10% of the salary for groceries
-
-      var budget = salary * percentage;
-      document.getElementById("result").innerHTML = "You can spend $" + budget.toFixed(2) + " on groceries.";
+  <title>Smooth Color Changing Background</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-  </script>
+  </style>
 </head>
 <body>
-  <h1>Grocery Budget Calculator</h1>
-  
-  <label for="salary">Enter your annual salary:</label>
-  <input type="number" id="salary" name="salary" min="0" step="1000" required>
-  <br><br>
-  
-  <button onclick="calculateBudget()">Calculate</button>
-  
-  <h2 id="result"></h2>
+  <script>
+    // Define an array of colors to cycle through
+    var colors = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"];
+    var currentIndex = 0;
+
+    // Function to change the background color smoothly
+    function changeBackgroundColor() {
+      document.body.style.transition = "background-color 1s";
+      document.body.style.backgroundColor = colors[currentIndex];
+      currentIndex = (currentIndex + 1) % colors.length;
+    }
+
+    // Call the function every 2 seconds (2000 milliseconds)
+    setInterval(changeBackgroundColor, 2000);
+  </script>
 </body>
 </html>
