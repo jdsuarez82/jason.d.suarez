@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Smooth Color Changing Background</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  </style>
+    <title>Colorful Name Marquee</title>
+    <style>
+        .marquee {
+            width: 100%;
+            background: linear-gradient(to right, #ff00cc, #00ccff);
+            color: white;
+            font-size: 36px;
+            text-align: center;
+            padding: 10px;
+            animation: marquee 5s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
 </head>
 <body>
-  <script>
-    // Define an array of colors to cycle through
-    var colors = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"];
-    var currentIndex = 0;
+    <h1>Colorful Name Marquee Generator</h1>
+    <form>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required>
+        <br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required>
+        <br>
+        <input type="submit" value="Generate Marquee">
+    </form>
+    <br>
+    <div id="marqueeContainer"></div>
 
-    // Function to change the background color smoothly
-    function changeBackgroundColor() {
-      document.body.style.transition = "background-color 1s";
-      document.body.style.backgroundColor = colors[currentIndex];
-      currentIndex = (currentIndex + 1) % colors.length;
-    }
+    <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var fullName = firstName + ' ' + lastName;
 
-    // Call the function every 2 seconds (2000 milliseconds)
-    setInterval(changeBackgroundColor, 2000);
-  </script>
+            var marqueeElement = document.createElement('div');
+            marqueeElement.className = 'marquee';
+            marqueeElement.textContent = fullName;
+
+            document.getElementById('marqueeContainer').innerHTML = '';
+            document.getElementById('marqueeContainer').appendChild(marqueeElement);
+        });
+    </script>
 </body>
 </html>
