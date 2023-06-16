@@ -1,52 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Colorful Name Marquee</title>
-    <style>
-        .marquee {
-            width: 100%;
-            background: linear-gradient(to right, #ff00cc, #00ccff);
-            color: white;
-            font-size: 36px;
-            text-align: center;
-            padding: 10px;
-            animation: marquee 5s linear infinite;
+    <title>Greg's Paver Calculator</title>
+    <script>
+        function calculatePavers() {
+            var squareFootage = document.getElementById("squareFootage").value;
+            var paverCount = Math.ceil(squareFootage);
+            document.getElementById("result").innerHTML = "Number of pavers needed: " + paverCount;
         }
-
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-    </style>
+    </script>
 </head>
 <body>
-    <h1>Colorful Name Marquee Generator</h1>
-    <form>
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" required>
-        <br>
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" required>
-        <br>
-        <input type="submit" value="Generate Marquee">
-    </form>
-    <br>
-    <div id="marqueeContainer"></div>
-
-    <script>
-        document.querySelector('form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            var firstName = document.getElementById('firstName').value;
-            var lastName = document.getElementById('lastName').value;
-            var fullName = firstName + ' ' + lastName;
-
-            var marqueeElement = document.createElement('div');
-            marqueeElement.className = 'marquee';
-            marqueeElement.textContent = fullName;
-
-            document.getElementById('marqueeContainer').innerHTML = '';
-            document.getElementById('marqueeContainer').appendChild(marqueeElement);
-        });
-    </script>
+    <h1>Greg's Paver Calculator</h1>
+    <label for="squareFootage">Enter square footage:</label>
+    <input type="number" id="squareFootage">
+    <button onclick="calculatePavers()">Calculate</button>
+    <p id="result"></p>
 </body>
 </html>
