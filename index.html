@@ -1,20 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Greg's Paver Calculator</title>
-    <script>
-        function calculatePavers() {
-            var squareFootage = document.getElementById("squareFootage").value;
-            var paverCount = Math.ceil(squareFootage);
-            document.getElementById("result").innerHTML = "Number of pavers needed: " + paverCount;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s ease;
         }
-    </script>
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #btn1 {
+            background-color: #3498db;
+        }
+
+        #btn2 {
+            background-color: #e74c3c;
+        }
+
+        #btn3 {
+            background-color: #2ecc71;
+        }
+    </style>
 </head>
 <body>
-    <h1>Greg's Paver Calculator</h1>
-    <label for="squareFootage">Enter square footage:</label>
-    <input type="number" id="squareFootage">
-    <button onclick="calculatePavers()">Calculate</button>
-    <p id="result"></p>
+    <button id="btn1" onclick="changeColor('#3498db')">Blue</button>
+    <button id="btn2" onclick="changeColor('#e74c3c')">Red</button>
+    <button id="btn3" onclick="changeColor('#2ecc71')">Green</button>
+
+    <script>
+        function changeColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
 </body>
 </html>
