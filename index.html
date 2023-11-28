@@ -3,49 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Changer</title>
+    <title>Happiness Quest</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            transition: background-color 2.0s ease;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            margin: 50px;
+        }
+
+        header {
+            background-color: #66cdaa;
+            padding: 20px;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
 
         button {
             padding: 10px 20px;
-            margin: 5px;
+            font-size: 16px;
+            background-color: #66cdaa;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
         }
 
-        #btn1 {
-            background-color: #3498db;
-        }
-
-        #btn2 {
-            background-color: #e74c3c;
-        }
-
-        #btn3 {
-            background-color: #2ecc71;
-        }
-        
-        #btn4 {
-            background-color: yellow;
+        button:hover {
+            background-color: #4fa98d;
         }
     </style>
 </head>
 <body>
-    <button id="btn1" onclick="changeColor('#3498db')">Blue</button>
-    <button id="btn2" onclick="changeColor('#e74c3c')">Red</button>
-    <button id="btn3" onclick="changeColor('#2ecc71')">Green</button>
-    <button id="btn4" onclick="changeColor('yellow')">Yellow</button>
+    <header>
+        <h1>Happiness Quest</h1>
+    </header>
+
+    <section>
+        <h2>How Happy Are You?</h2>
+        <p>Take our happiness questionnaire and discover your joy level!</p>
+
+        <button onclick="startQuestionnaire()">Start Questionnaire</button>
+    </section>
 
     <script>
-        function changeColor(color) {
-            document.body.style.backgroundColor = color;
+        function startQuestionnaire() {
+            alert("Get ready to embark on your happiness quest!");
+            // Add your questionnaire logic here
         }
     </script>
 </body>
