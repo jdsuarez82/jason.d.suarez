@@ -57,10 +57,14 @@
         <h2>How Hungry Are You?</h2>
         <p>Take our hunger questionnaire and discover your hunger level!</p>
 
-        <button onclick="startQuestionnaire()">Start Questionnaire</button>
+      /*<button onclick="startQuestionnaire()">Start Questionnaire</button>*/
+        <button>Start Questionnaire</button>
     </section>
 
     <script>
+        let button = document.querySelector("button");
+        button.addEventListener('click', startQuestionnaire);
+        
         function startQuestionnaire() {
             alert("Get ready to embark on your hunger quest!");
             window.location.href = 'www.google.com';
