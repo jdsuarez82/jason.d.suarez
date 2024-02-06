@@ -3,49 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunger Quest</title>
+    <title>Easy Cookie Recipe</title>
     <style>
-        * {
-            border: 1px solid gold;
-            margin: 10px;
-            padding: 10px;
-            box-sizing: border-box;
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #673AB7;
+        }
+        ol {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Hunger Quest</h1>
-    </header>
-
-    <section>
-        <h2>How Hungry Are You?</h2>
-        <p>Take our hunger questionnaire and discover your hunger level!</p>
-
-    <!--<button onclick="startQuestionnaire()">Start Questionnaire</button>-->
-        <button>Start Questionnaire</button>
-    </section>
-
-    <script>
-        let button = document.querySelector("button");
-        button.addEventListener('click', startQuestionnaire);
-        
-        function startQuestionnaire() {
-            alert("Get ready to embark on your hunger quest!");
-            window.location.href = 'www.google.com';
-            // Add your questionnaire logic here
-        }
-    </script>
-    
-    <fieldset>
-      <legend>Gender</legend>
-         <input type="radio" name="gender" id="male" value="male" checked="checked"/>
-            <label for="male">Male</label>
-
-         <input type="radio" name="gender" id="female" value="female"/>
-            <label for="female">Female</label>
-
-    </fieldset>
-
+    <h1>Simple Cookie Recipe</h1>
+    <ol>
+        <li>Gather ingredients.</li>
+        <li>Mix flour, sugar, butter.</li>
+        <li>Add egg, chocolate chips.</li>
+        <li>Form dough.</li>
+        <li>Preheat oven.</li>
+        <li>Scoop dough.</li>
+        <li>Bake.</li>
+        <li>Wait.</li>
+        <li>Cool.</li>
+        <li>Enjoy!</li>
+    </ol>
 </body>
 </html>
