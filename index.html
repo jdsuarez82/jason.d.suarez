@@ -3,103 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jason Suarez - Resume</title>
+    <title>Jason Suarez - Steampunk Style</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            background-color: #2c2c2c;
+            color: #f0e6d2;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3e3e3e;
             padding: 20px;
-            background-color: #f4f4f4;
-        }
-
-        header, section, aside {
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        h2 {
-            color: #555;
-        }
-
-        p {
-            line-height: 1.6;
-            color: #777;
-        }
-        button {
-            color: black; 
-            border: 2px solid #04AA6D;
-            background-color: white;
-            padding: 16px 32px;
             text-align: center;
+            border-bottom: 5px solid #d4af37;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #d4af37;
+        }
+        nav {
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: #d4af37;
             text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        .content {
+            padding: 20px;
+        }
+        .gear {
+            width: 100px;
+            height: 100px;
+            background: url('gear.png') no-repeat center center;
+            background-size: contain;
             display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-            }
-            
-        button:hover {
-            background-color: #04AA6D;
-            color: white;
-            }
+        }
+        footer {
+            background-color: #3e3e3e;
+            text-align: center;
+            padding: 10px;
+            border-top: 5px solid #d4af37;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Jason D. Suarez</h1>
-        <p>Web Developer</p>
+        <h1>Jason Suarez</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
-
-    <section>
-        <h2>Contact Information</h2>
-        <p>Email: jdsuarez82@gmail.com</p>
-        <p>LinkedIn: linkedin.com/in/yourname</p>
-        <p>GitHub: github.com/jdsuarez82</p>
-    </section>
-
-    <section>
-        <h2>Education</h2>
-        <p>University Name - Bachelor's in Computer Science</p>
-        <p>Graduation Year: 20XX</p>
-    </section>
-
-    <section>
-        <h2>Skills</h2>
-        <p>HTML, CSS, JavaScript</p>
-        <p>React, Node.js</p>
-        <!-- Add more skills as needed -->
-    </section>
-
-    <section>
-        <h2>Experience</h2>
-        <h3>Job Title</h3>
-        <p>Company Name - Location</p>
-        <p>Start Date - End Date</p>
-        <p>Description of your responsibilities and achievements.</p>
-
-        <!-- Add more experiences as needed -->
-    </section>
-
-    <section>
-        <h2>Projects</h2>
-        <h3>Project Title</h3>
-        <p>Description of the project and your role.</p>
-
-        <!-- Add more projects as needed -->
-    </section>
-
-    <aside>
-        <h2>Additional Information</h2>
-        <p>Languages: English, Spanish</p>
-        <p>Certifications: Certification Name</p>
-    </aside>
-    
-    <button onclick="a()">Click me!</button>
-    <script src="jason.js"></script>
-    
+    <div class="content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my steampunk-themed webpage! I am Jason Suarez, a web developer with a passion for vintage aesthetics and industrial design.</p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="gear"></div>
+            <p>Check out my latest projects that blend modern technology with steampunk style.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to reach out to me via email at <a href="mailto:jason@example.com">jason@example.com</a>.</p>
+        </section>
+    </div>
+    <footer>
+        <p>© 2024 Jason Suarez. All rights reserved.</p>
+    </footer>
 </body>
 </html>
