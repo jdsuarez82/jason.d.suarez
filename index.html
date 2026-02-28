@@ -1,138 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ClearFlow Mobile RV Pump-Out Services</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #1f6f8b;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin-bottom: 10px;
-      font-size: 2.5em;
-    }
-
-    .price {
-      font-size: 1.8em;
-      font-weight: bold;
-      margin-top: 15px;
-      color: #ffd166;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .feature-box {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .cta {
-      background: #ffd166;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .cta h2 {
-      margin-bottom: 15px;
-    }
-
-    .cta a {
-      display: inline-block;
-      background: #1f6f8b;
-      color: #fff;
-      padding: 15px 30px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 1.2em;
-    }
-
-    .cta a:hover {
-      background: #155a70;
-    }
-
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Hello Booma Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>ClearFlow Mobile RV Pump-Out Services</h1>
-  <p>We come to you — no dumping station needed</p>
-  <div class="price">$79.99 per service</div>
-</header>
+    <button onclick="sayHello()">Click Me</button>
+    <div id="message"></div>
 
-<section>
-  <h2>What We Do</h2>
-  <p>
-    We provide fast, clean, and professional mobile pump-out services for
-    RV black and gray tanks. Perfect for RV parks, campgrounds, storage lots,
-    or private property.
-  </p>
-
-  <div class="features">
-    <div class="feature-box">
-      <h3>🚽 Black & Gray Tanks</h3>
-      <p>Complete pump-out of both black and gray tanks.</p>
-    </div>
-
-    <div class="feature-box">
-      <h3>🧼 Clean & Sanitary</h3>
-      <p>Spill-free service using professional equipment.</p>
-    </div>
-
-    <div class="feature-box">
-      <h3>⏱ Fast Service</h3>
-      <p>Most services completed in under 30 minutes.</p>
-    </div>
-
-    <div class="feature-box">
-      <h3>📍 We Come to You</h3>
-      <p>No driving, no dump station lines, no hassle.</p>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <h2>Schedule Your Pump-Out Today</h2>
-  <p>Flat rate: <strong>$79.99</strong></p>
-  <a href="tel:12142237957">Call or Text: (214) 223-7957</a>
-</section>
-
-<footer>
-  <p>© 2025 Mobile RV Tank Pump-Out Service</p>
-  <p>Licensed & Environmentally Responsible Disposal</p>
-</footer>
+    <script>
+        function sayHello() {
+            document.getElementById("message").textContent = "hello Booma";
+        }
+    </script>
 
 </body>
 </html>
